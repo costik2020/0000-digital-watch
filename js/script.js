@@ -12,6 +12,9 @@
 //- Grab an element from that page
 let watch = document.querySelector(".watch");
 
+// Have some variables with my hh:mm:ss time...
+let hh, mm, ss;
+
 //- Display the clock on that element that I grabed
 watch.textContent = "hh:mm:ss";
 //console.log("watch=", watch);
@@ -21,7 +24,7 @@ let today = new Date();
 
 // MDN hints on handeling Date object
 //const [hour, minutes, seconds] = [date.getHours(), date.getMinutes(), date.getSeconds()];
-console.log("today=", today.getHours(), today.getMinutes(), today.getSeconds());
+//console.log("today=", today.getHours(), today.getMinutes(), today.getSeconds());
 //watch.textContent = `${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}`;
 
 
@@ -32,16 +35,39 @@ console.log("today=", today.getHours(), today.getMinutes(), today.getSeconds());
 	setInterval(() => {
 		today = new Date();
 	  console.log("test 1 sec");
-	  console.log("second=", second);
+	  //console.log("second=", second);
 	  second = second + 1;
-	  watch.innerHTML = `${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}`;
+	  //watch.innerHTML = `${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}`;
+	  // Display the time corectly in a 2 digits format
+	  hh = setTwoDigits(today.getHours());
+	  mm = setTwoDigits(today.getMinutes());
+	  ss = setTwoDigits(today.getSeconds());
+
+	 //let test = setTwoDigits(12);
+	 //console.log("test=", test);
+	 //ss = today.getSeconds();
+	 watch.innerHTML = `${hh}:${mm}:${ss}`;
+
 	  //watch.innerHTML = `${second} test`;
-	  console.log("watch.textContent=", `${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}`);
+	  //console.log("watch.textContent=", `${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}`);
   }, 1000)
 
 
 
+// A small function that will make sure that if recives a 1 digit number then it will output a 2 digit nr
+// For the input of 2 or 16
+// It will output  02 or 16
+function setTwoDigits(number){
+	let newNumber;
+	if (number <10){
+		newNumber = `0${number}`;
 
+	}
+	else {
+		newNumber = number;
+	}
+	return newNumber;
+}
 
 
 // I will use `setTimeout(code, delay)` API to do this
