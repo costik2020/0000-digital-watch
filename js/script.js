@@ -17,11 +17,12 @@ watch.textContent = "hh:mm:ss";
 //console.log("watch=", watch);
 
 //	- See if I have a javascript function that can give me a time or date.
-const today = new Date();
+let today = new Date();
 
 // MDN hints on handeling Date object
 //const [hour, minutes, seconds] = [date.getHours(), date.getMinutes(), date.getSeconds()];
 console.log("today=", today.getHours(), today.getMinutes(), today.getSeconds());
+//watch.textContent = `${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}`;
 
 
 //	- call that function each second
@@ -29,10 +30,14 @@ console.log("today=", today.getHours(), today.getMinutes(), today.getSeconds());
 // I implemented the idea of executing some code at each 1 sec passing of time
 	let second= 0;
 	setInterval(() => {
+		today = new Date();
 	  console.log("test 1 sec");
 	  console.log("second=", second);
 	  second = second + 1;
-	}, 1000)
+	  watch.innerHTML = `${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}`;
+	  //watch.innerHTML = `${second} test`;
+	  console.log("watch.textContent=", `${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}`);
+  }, 1000)
 
 
 
