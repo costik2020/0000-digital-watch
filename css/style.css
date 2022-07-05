@@ -1,15 +1,42 @@
 
 body {
 	font-size: 100%;
+
+
+
 }
 
 /*There are some issues with the content not sizing the way I want it to size*/
 /*I need to look into that..*/
 
+.frame {
+	display: flex;
+	flex-direction: column;
+	border: 5px solid brown; /*temp border*/
+	/*width: 70%;*/
+	align-items: center;
+}
+
+h1,
+p,
+.watch{
+	width: 70%;
+	align-content: center;
+	border: 5px solid yellow;
+	/*Force text to dysplay in the center of divs..*/
+	display: flex;
+	justify-content: center;
+
+
+}
+
 .watch {
 	height: 200px;
 	background-color: #66ccff;
 	font-size: 4em;
+
+
 }
+
 
 

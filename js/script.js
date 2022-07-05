@@ -7,6 +7,7 @@
 //	- See if I have a javascript function that can give me a time or date.
 //	- call that function each second
 //	- update the digital clock
+// -Give some nice style to the whole thing
 
 
 //- Grab an element from that page
@@ -14,13 +15,14 @@ let watch = document.querySelector(".watch");
 
 // Have some variables with my hh:mm:ss time...
 let hh, mm, ss;
+let today;
 
 //- Display the clock on that element that I grabed
 watch.textContent = "hh:mm:ss";
 //console.log("watch=", watch);
 
 //	- See if I have a javascript function that can give me a time or date.
-let today = new Date();
+//let today = new Date();
 
 // MDN hints on handeling Date object
 //const [hour, minutes, seconds] = [date.getHours(), date.getMinutes(), date.getSeconds()];
@@ -33,10 +35,10 @@ let today = new Date();
 // I implemented the idea of executing some code at each 1 sec passing of time
 	let second= 0;
 	setInterval(() => {
-		today = new Date();
-	  console.log("test 1 sec");
+	  today = new Date();
+	  //console.log("test 1 sec");
 	  //console.log("second=", second);
-	  second = second + 1;
+	  //second = second + 1;
 	  //watch.innerHTML = `${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}`;
 	  // Display the time corectly in a 2 digits format
 	  hh = setTwoDigits(today.getHours());
