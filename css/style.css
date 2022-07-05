@@ -1,7 +1,10 @@
 
 body {
-	font-size: 2vh;
+	font-size: 100%;
 }
+
+/*There are some issues with the content not sizing the way I want it to size*/
+/*I need to look into that..*/
 
 .watch {
 	height: 200px;
